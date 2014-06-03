@@ -182,9 +182,9 @@ nav ul #publicar_nav a
 	padding: 0.6em 0.8em; 
 	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
 }
-nav ul #publicar_nav a:hover
+nav ul #publicar_nav a:hover:before
 {
-	font-size: 17px;
+	font-size: 20px;
 }
 #contenido
 {
