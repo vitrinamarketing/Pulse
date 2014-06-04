@@ -1,6 +1,5 @@
 <!doctype html> 
 <html lang="es">
-
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="description" content="Proyecto de Mejorando.la"/>
@@ -8,7 +7,8 @@
 	<title>Puls3: Un sitio donde puedes realizar tus sueños</title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="normalize.css"/>
-	<link rel="stylesheet" href="estilos.css"/>
+	<link rel="stylesheet" href="estilos.css"/>	
+	<!--<script src="jQuery.js"></script>-->
 </head>
 
 <body>
@@ -36,10 +36,16 @@
 			<li><a href="#">Django</a></li>
 
 			<li id="publicar_nav">
-				<a href="#" class="icon-lapiz">Publicar</a>
+				<a href="#" class="icon-lapiz" id="mostrar_form">Publicar</a>
 			</li>
 		</ul>
 	</nav>
+
+	<form action="" id="formulario" class="formulario">
+		<input type="text" id="titulo" placeholder="Título" required>
+		<input type="url" id="url" placeholder="Url:" required>
+		<input type="submit" value="Agregar">
+	</form>
 	
 	<aside>
 		<video width="320" height='240' controls>
@@ -316,6 +322,9 @@
 			ESIME "Culhuacán"
 		</p>
 	</footer>
-</body>
 
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="formulario.js"></script>
+
+</body>
 </html>
