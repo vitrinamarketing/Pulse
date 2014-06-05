@@ -5,13 +5,30 @@ var $form = $('#formulario'),
 	$list = $("#contenido"),
 	$post = $(".item").first();
 
-function mostrarFormulario()
+//si es true hay algo guardado
+if(localStorage.getItem('autosave'))
 {
+	$titulo.val(sessionStorage.getItem('titulo'));
+	$url.val(sessionStorage.getItem('url'));
+}
+
+var id = setInterval( function()
+{
+	sessionStorage.setItem('titulo', $titulo.val());
+	sessionStorage.setItem('url', $url.val());
+}, 1000);
+
+
+function mostrarFormulario(tito)
+{
+	//la accion del elemento no la hagas pero ejecuta todo este codigo
+	tito.preventDefault();
+	tito.stopPropagation();
 	//Si esta visible lo oculta y viceversa
 	$form.slideToggle();
+	$list.slideToggle();
 	//Se puede usar stopBubbling o preventDefault en JS
 	//pero en jQ se hacen los dos retornando false
-	return false;
 }
 
 function agregarPost()
@@ -27,6 +44,9 @@ function agregarPost()
 	$clone.hide();
 	//enbeber el clone
 	$list.prepend($clone);
+	mostrarFormulario();
+	$titulo.val('');
+	$url.val('');
 	$clone.fadeIn();
 	//inabilita ir a el url que se ingresa
 	return false;
@@ -34,4 +54,5 @@ function agregarPost()
 
 //Eventos
 $button.click( mostrarFormulario );
+//asigna un evento 
 $form.on( "submit", agregarPost );
