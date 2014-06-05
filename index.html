@@ -3,12 +3,11 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="description" content="Proyecto de Mejorando.la"/>
-	<meta name="viewport" content="width=device-width, minimum-scale=1, maxumum-sacale=1" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
 	<title>Puls3: Un sitio donde puedes realizar tus sueños</title>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="normalize.css"/>
 	<link rel="stylesheet" href="estilos.css"/>	
-	<!--<script src="jQuery.js"></script>-->
+	<script src="prefixfree.js"></script>
 </head>
 
 <body>
@@ -49,8 +48,8 @@
 	
 	<aside>
 		<video width="320" height='240' controls>
-			<source src="movie.mp4" type="video/mp4">
-		  	<source src="movie.ogg" type="video/ogg">
+			<source src="Videos/Prove_of_video.mp4" type="video/mp4">
+		  	<source src="Videos/Prove_of_video.ogv" type="video/ogg">
 		</video>
 	</aside>
 
@@ -323,8 +322,20 @@
 		</p>
 	</footer>
 
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="jQuery.js"></script>
 	<script src="formulario.js"></script>
+	<script>
+
+	window.onload = function(){
+						console.log("Ya se Cargo onload");
+					}
+
+
+	$(function(){
+		//sconsole.log("Ya se cargo DOMContenLoaded");
+	})
+
+	</script>
 
 </body>
 </html>
